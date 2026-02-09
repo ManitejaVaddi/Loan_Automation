@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Automated Loan Approval System</title>
+
+    <!-- IMPORTANT: absolute path -->
+    <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+
+<div class="container">
+    <h1>Automated Loan Approval System</h1>
+    <p class="subtitle">Internal Bank Loan Processing Tool</p>
+
+    <form id="loanForm">
+        <label for="aadhar">Aadhaar Number</label>
+        <input type="text" id="aadhar" required />
+
+        <label for="pan">PAN Number</label>
+        <input type="text" id="pan" required />
+
+        <label for="company">Company</label>
+        <input type="text" id="company" required />
+
+        <label for="experience">Experience (Years)</label>
+        <input type="number" id="experience" min="0" required />
+
+        <button type="submit">Check Loan Eligibility</button>
+    </form>
+
+    <div id="result" class="result hidden"></div>
+</div>
+
+<!-- IMPORTANT: absolute path -->
+<script src="/static/app.js"></script>
+
+</body>
+</html>
