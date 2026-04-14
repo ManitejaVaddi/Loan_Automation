@@ -133,4 +133,3 @@ Git
 pip install fastapi uvicorn python-dotenv
 
 2️⃣ Start the server
-uvicorn api_server:app --reload
