@@ -1,0 +1,68 @@
+# -------------------------
+# Python
+# -------------------------
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+
+# -------------------------
+# Virtual Environments
+# -------------------------
+venv/
+env/
+.venv/
+ENV/
+
+# -------------------------
+# Environment Variables
+# -------------------------
+.env
+
+# -------------------------
+# Logs
+# -------------------------
+logs/
+*.log
+
+# -------------------------
+# Database
+# -------------------------
+loan_system.db
+*.sqlite
+*.sqlite3
+
+# -------------------------
+# Reports / Generated Files
+# -------------------------
+loan_decision_report.csv
+
+# -------------------------
+# OS / Editor Files
+# -------------------------
+.DS_Store
+Thumbs.db
+
+# VS Code
+.vscode/
+
+# PyCharm
+.idea/
+
+# -------------------------
+# Node / Frontend Cache (just in case)
+# -------------------------
+node_modules/
+
+# -------------------------
+# Build / Distribution
+# -------------------------
+build/
+dist/
+*.egg-info/
+
+# -------------------------
+# Jupyter
+# -------------------------
+.ipynb_checkpoints/

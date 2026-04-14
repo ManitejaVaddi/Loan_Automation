@@ -1,0 +1,120 @@
+2026-02-09 23:16:43,679 | INFO | main | Starting loan application processing
+2026-02-09 23:16:43,679 | INFO | main | Starting loan application processing
+2026-02-09 23:16:43,706 | INFO | db | Database tables initialized successfully
+2026-02-09 23:16:43,706 | INFO | db | Database tables initialized successfully
+2026-02-09 23:16:44,207 | WARNING | main | Identity verification failed
+2026-02-09 23:16:44,207 | WARNING | main | Identity verification failed
+2026-02-09 23:18:04,155 | INFO | main | Starting loan application processing
+2026-02-09 23:18:04,155 | INFO | main | Starting loan application processing
+2026-02-09 23:18:04,158 | INFO | db | Database tables initialized successfully
+2026-02-09 23:18:04,158 | INFO | db | Database tables initialized successfully
+2026-02-09 23:18:04,667 | WARNING | main | Identity verification failed
+2026-02-09 23:18:04,667 | WARNING | main | Identity verification failed
+2026-02-09 23:21:27,607 | INFO | main | Starting loan application processing
+2026-02-09 23:21:27,607 | INFO | main | Starting loan application processing
+2026-02-09 23:21:27,610 | INFO | db | Database tables initialized successfully
+2026-02-09 23:21:27,610 | INFO | db | Database tables initialized successfully
+2026-02-09 23:21:28,111 | INFO | main | Applicant data collected successfully
+2026-02-09 23:21:28,111 | INFO | main | Applicant data collected successfully
+2026-02-09 23:21:28,128 | INFO | db | Loan decision stored | Applicant=Sample User | Decision=REJECTED
+2026-02-09 23:21:28,128 | INFO | db | Loan decision stored | Applicant=Sample User | Decision=REJECTED
+2026-02-09 23:21:28,130 | INFO | main | Loan processed successfully | Applicant=Sample User | Decision=REJECTED
+2026-02-09 23:21:28,130 | INFO | main | Loan processed successfully | Applicant=Sample User | Decision=REJECTED
+2026-02-09 23:49:04,511 | INFO | main | Starting loan application processing
+2026-02-09 23:49:04,511 | INFO | main | Starting loan application processing
+2026-02-09 23:49:04,539 | INFO | db | Database tables initialized successfully
+2026-02-09 23:49:04,539 | INFO | db | Database tables initialized successfully
+2026-02-09 23:49:05,040 | INFO | main | Applicant data collected successfully
+2026-02-09 23:49:05,040 | INFO | main | Applicant data collected successfully
+2026-02-09 23:49:05,056 | INFO | db | Loan decision stored | Applicant=Sample User | Decision=REVIEW
+2026-02-09 23:49:05,056 | INFO | db | Loan decision stored | Applicant=Sample User | Decision=REVIEW
+2026-02-09 23:49:05,060 | INFO | main | Loan processed successfully | Applicant=Sample User | Decision=REVIEW
+2026-02-09 23:49:05,060 | INFO | main | Loan processed successfully | Applicant=Sample User | Decision=REVIEW
+2026-04-14 00:22:09,135 | INFO | main | Starting loan application processing
+2026-04-14 00:22:09,135 | INFO | main | Starting loan application processing
+2026-04-14 00:22:09,155 | INFO | db | Database tables initialized successfully
+2026-04-14 00:22:09,155 | INFO | db | Database tables initialized successfully
+2026-04-14 00:22:09,457 | INFO | main | Applicant data collected successfully
+2026-04-14 00:22:09,457 | INFO | main | Applicant data collected successfully
+2026-04-14 00:22:09,474 | INFO | db | Loan decision stored | Applicant=User_9012 | Decision=REVIEW
+2026-04-14 00:22:09,474 | INFO | db | Loan decision stored | Applicant=User_9012 | Decision=REVIEW
+2026-04-14 00:22:09,477 | INFO | main | Loan processed successfully | Applicant=User_9012 | Decision=REVIEW
+2026-04-14 00:22:09,477 | INFO | main | Loan processed successfully | Applicant=User_9012 | Decision=REVIEW
+2026-04-14 00:49:28,623 | INFO | main | Starting loan application processing
+2026-04-14 00:49:28,623 | INFO | main | Starting loan application processing
+2026-04-14 00:49:28,628 | INFO | db | Database tables initialized successfully
+2026-04-14 00:49:28,628 | INFO | db | Database tables initialized successfully
+2026-04-14 00:49:28,945 | INFO | db | Loan decision stored | Applicant=User_8908 | Decision=REVIEW
+2026-04-14 00:49:28,945 | INFO | db | Loan decision stored | Applicant=User_8908 | Decision=REVIEW
+2026-04-14 00:51:21,081 | INFO | main | Starting loan application processing
+2026-04-14 00:51:21,081 | INFO | main | Starting loan application processing
+2026-04-14 00:51:21,084 | INFO | db | Database tables initialized successfully
+2026-04-14 00:51:21,084 | INFO | db | Database tables initialized successfully
+2026-04-14 00:51:21,398 | INFO | db | Loan decision stored | Applicant=User_8908 | Decision=REVIEW
+2026-04-14 00:51:21,398 | INFO | db | Loan decision stored | Applicant=User_8908 | Decision=REVIEW
+2026-04-14 00:51:31,950 | INFO | main | Starting loan application processing
+2026-04-14 00:51:31,950 | INFO | main | Starting loan application processing
+2026-04-14 00:51:31,953 | INFO | db | Database tables initialized successfully
+2026-04-14 00:51:31,953 | INFO | db | Database tables initialized successfully
+2026-04-14 00:51:32,263 | INFO | db | Loan decision stored | Applicant=User_8908 | Decision=REVIEW
+2026-04-14 00:51:32,263 | INFO | db | Loan decision stored | Applicant=User_8908 | Decision=REVIEW
+2026-04-14 00:51:49,052 | INFO | main | Starting loan application processing
+2026-04-14 00:51:49,052 | INFO | main | Starting loan application processing
+2026-04-14 00:51:49,056 | INFO | db | Database tables initialized successfully
+2026-04-14 00:51:49,056 | INFO | db | Database tables initialized successfully
+2026-04-14 00:51:49,373 | INFO | db | Loan decision stored | Applicant=User_8908 | Decision=REVIEW
+2026-04-14 00:51:49,373 | INFO | db | Loan decision stored | Applicant=User_8908 | Decision=REVIEW
+2026-04-14 00:56:26,036 | INFO | main | Starting loan application processing
+2026-04-14 00:56:26,036 | INFO | main | Starting loan application processing
+2026-04-14 00:56:26,048 | INFO | db | Database tables initialized successfully
+2026-04-14 00:56:26,048 | INFO | db | Database tables initialized successfully
+2026-04-14 00:56:26,374 | INFO | db | Loan decision stored | Applicant=User_8908 | Decision=REJECTED
+2026-04-14 00:56:26,374 | INFO | db | Loan decision stored | Applicant=User_8908 | Decision=REJECTED
+2026-04-14 00:58:22,173 | INFO | main | Starting loan application processing
+2026-04-14 00:58:22,173 | INFO | main | Starting loan application processing
+2026-04-14 00:58:22,181 | INFO | db | Database tables initialized successfully
+2026-04-14 00:58:22,181 | INFO | db | Database tables initialized successfully
+2026-04-14 00:58:22,498 | INFO | db | Loan decision stored | Applicant=User_9952 | Decision=REVIEW
+2026-04-14 00:58:22,498 | INFO | db | Loan decision stored | Applicant=User_9952 | Decision=REVIEW
+2026-04-14 01:04:05,656 | INFO | main | Starting loan application processing
+2026-04-14 01:04:05,656 | INFO | main | Starting loan application processing
+2026-04-14 01:04:05,663 | INFO | db | Database tables initialized successfully
+2026-04-14 01:04:05,663 | INFO | db | Database tables initialized successfully
+2026-04-14 01:04:05,987 | INFO | db | Loan decision stored | Applicant=User_9952 | Decision=REVIEW
+2026-04-14 01:04:05,987 | INFO | db | Loan decision stored | Applicant=User_9952 | Decision=REVIEW
+2026-04-14 01:05:00,885 | INFO | main | Starting loan application processing
+2026-04-14 01:05:00,885 | INFO | main | Starting loan application processing
+2026-04-14 01:05:00,891 | INFO | db | Database tables initialized successfully
+2026-04-14 01:05:00,891 | INFO | db | Database tables initialized successfully
+2026-04-14 01:05:01,214 | INFO | db | Loan decision stored | Applicant=User_9952 | Decision=APPROVED
+2026-04-14 01:05:01,214 | INFO | db | Loan decision stored | Applicant=User_9952 | Decision=APPROVED
+2026-04-14 01:05:06,512 | INFO | main | Starting loan application processing
+2026-04-14 01:05:06,512 | INFO | main | Starting loan application processing
+2026-04-14 01:05:06,519 | INFO | db | Database tables initialized successfully
+2026-04-14 01:05:06,519 | INFO | db | Database tables initialized successfully
+2026-04-14 01:05:06,835 | INFO | db | Loan decision stored | Applicant=User_9952 | Decision=APPROVED
+2026-04-14 01:05:06,835 | INFO | db | Loan decision stored | Applicant=User_9952 | Decision=APPROVED
+2026-04-14 01:15:40,906 | INFO | main | Starting loan application processing
+2026-04-14 01:15:40,906 | INFO | main | Starting loan application processing
+2026-04-14 01:15:40,916 | INFO | db | Database tables initialized successfully
+2026-04-14 01:15:40,916 | INFO | db | Database tables initialized successfully
+2026-04-14 01:15:41,238 | INFO | db | Loan decision stored | Applicant=User_9952 | Decision=REVIEW
+2026-04-14 01:15:41,238 | INFO | db | Loan decision stored | Applicant=User_9952 | Decision=REVIEW
+2026-04-14 01:16:15,898 | INFO | main | Starting loan application processing
+2026-04-14 01:16:15,898 | INFO | main | Starting loan application processing
+2026-04-14 01:16:15,907 | INFO | db | Database tables initialized successfully
+2026-04-14 01:16:15,907 | INFO | db | Database tables initialized successfully
+2026-04-14 01:16:16,231 | INFO | db | Loan decision stored | Applicant=User_9952 | Decision=REVIEW
+2026-04-14 01:16:16,231 | INFO | db | Loan decision stored | Applicant=User_9952 | Decision=REVIEW
+2026-04-14 01:16:27,409 | INFO | main | Starting loan application processing
+2026-04-14 01:16:27,409 | INFO | main | Starting loan application processing
+2026-04-14 01:16:27,415 | INFO | db | Database tables initialized successfully
+2026-04-14 01:16:27,415 | INFO | db | Database tables initialized successfully
+2026-04-14 01:16:27,733 | INFO | db | Loan decision stored | Applicant=User_9952 | Decision=REVIEW
+2026-04-14 01:16:27,733 | INFO | db | Loan decision stored | Applicant=User_9952 | Decision=REVIEW
+2026-04-14 01:16:43,934 | INFO | main | Starting loan application processing
+2026-04-14 01:16:43,934 | INFO | main | Starting loan application processing
+2026-04-14 01:16:43,939 | INFO | db | Database tables initialized successfully
+2026-04-14 01:16:43,939 | INFO | db | Database tables initialized successfully
+2026-04-14 01:16:44,264 | INFO | db | Loan decision stored | Applicant=User_9952 | Decision=APPROVED
+2026-04-14 01:16:44,264 | INFO | db | Loan decision stored | Applicant=User_9952 | Decision=APPROVED
