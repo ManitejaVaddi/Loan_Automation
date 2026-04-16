@@ -214,3 +214,9 @@
 2026-04-16 22:06:48,991 | INFO | db | Loan decision stored | Applicant=User_9456 | Decision=REVIEW
 2026-04-16 22:06:48,997 | INFO | main | Loan processed | User_9456 | Score=48 | Decision=REVIEW
 2026-04-16 22:06:48,997 | INFO | main | Loan processed | User_9456 | Score=48 | Decision=REVIEW
+2026-04-16 22:25:46,174 | INFO | main | Starting loan application processing
+2026-04-16 22:25:46,174 | INFO | main | Starting loan application processing
+2026-04-16 22:25:46,197 | INFO | db | Database tables initialized successfully
+2026-04-16 22:25:46,197 | INFO | db | Database tables initialized successfully
+2026-04-16 22:25:46,510 | INFO | db | Loan decision stored | Applicant=User_3063 | Decision=REVIEW
+2026-04-16 22:25:46,510 | INFO | db | Loan decision stored | Applicant=User_3063 | Decision=REVIEW
