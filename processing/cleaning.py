@@ -3,7 +3,7 @@ def clean_applicant_data(data: dict) -> dict:
 
     for key, value in data.items():
 
-        # ✅ Handle None values smartly
+        #  Handle None values smartly
         if value is None:
             if key in ["existing_loans", "experience_years"]:
                 cleaned[key] = 0
@@ -11,7 +11,7 @@ def clean_applicant_data(data: dict) -> dict:
                 cleaned[key] = value
             continue
 
-        # ✅ Normalize numeric fields
+        #  Normalize numeric fields
         if key == "credit_score":
             cleaned[key] = int(value)
 
@@ -21,7 +21,7 @@ def clean_applicant_data(data: dict) -> dict:
         elif key in ["existing_loans", "experience_years"]:
             cleaned[key] = int(value)
 
-        # ✅ Clean strings
+        #  Clean strings
         elif isinstance(value, str):
             cleaned[key] = value.strip()
 

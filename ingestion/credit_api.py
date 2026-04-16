@@ -4,7 +4,7 @@ import re
 
 def fetch_credit_score(pan_number: str) -> dict:
     
-    # ❌ Invalid PAN
+    #  Invalid PAN
     pattern = r"^[A-Z]{5}[0-9]{4}[A-Z]$"
     if not re.match(pattern, pan_number):
         return {
@@ -13,7 +13,7 @@ def fetch_credit_score(pan_number: str) -> dict:
             "existing_loans": 3
         }
 
-    # ✅ Generate realistic credit profile
+    #  Generate realistic credit profile
     credit_score = random.randint(650, 800)
     existing_loans = random.randint(0, 2)
 

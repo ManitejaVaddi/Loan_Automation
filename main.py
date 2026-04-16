@@ -18,13 +18,13 @@ def process_loan_application(
     pan_number: str,
     experience_years: int,
     loan_amount: float,
-    monthly_income: float   # ✅ NEW
+    monthly_income: float   
 ) -> dict:
 
     try:
         logger.info("Starting loan application processing")
 
-        # ✅ DB setup
+        #  DB setup
         create_tables()
 
         # 🔹 Step 1: Identity Verification
@@ -101,14 +101,14 @@ def process_loan_application(
         }
 
 
-# ✅ CLI test
+#  CLI test
 if __name__ == "__main__":
     result = process_loan_application(
         aadhar_number="123456789012",
         pan_number="ABCDE1234F",
         experience_years=3,
         loan_amount=200000,
-        monthly_income=50000   # ✅ REQUIRED NOW
+        monthly_income=50000   
     )
 
     print(result)

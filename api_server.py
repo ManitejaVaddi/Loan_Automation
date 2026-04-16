@@ -18,11 +18,11 @@ app = FastAPI(
     redoc_url="/redoc"
 )
 
-# ✅ Static files
+#  Static files
 app.mount("/static", StaticFiles(directory=BASE_DIR / "static"), name="static")
 
 
-# ✅ Custom Swagger UI
+#  Custom Swagger UI
 @app.get("/docs", include_in_schema=False)
 def custom_swagger_ui():
     return get_swagger_ui_html(
@@ -32,7 +32,7 @@ def custom_swagger_ui():
     )
 
 
-# ✅ SINGLE CLEAN ENDPOINT (FIXED)
+#  SINGLE CLEAN ENDPOINT (FIXED)
 @app.post("/loan/apply", response_model=LoanDecisionResponse, tags=["Loan Processing"])
 def apply_loan(request: LoanApplicationRequest):
     result = process_loan_application(
@@ -43,24 +43,24 @@ def apply_loan(request: LoanApplicationRequest):
         loan_amount=request.loan_amount   # ✅ FIXED
     )
 
-    # 🔴 Handle business failure
+    #  Handle business failure
     if result["status"] == "FAILED":
         raise HTTPException(status_code=400, detail=result["reason"])
 
-    # 🔴 Handle system error
+    #  Handle system error
     if result["status"] == "ERROR":
         raise HTTPException(status_code=500, detail=result["message"])
 
     return result
 
 
-# ✅ Audit endpoint
+#  Audit endpoint
 @app.get("/loan/audit", tags=["Audit"])
 def audit_loans():
     return fetch_all_decisions()
 
 
-# ✅ Serve frontend
+#  Serve frontend
 @app.get("/", include_in_schema=False)
 def serve_frontend():
     return FileResponse(BASE_DIR / "static" / "index.html")

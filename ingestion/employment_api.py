@@ -1,20 +1,20 @@
 def verify_employment(company: str, experience_years: int) -> dict:
     
-    # ❌ Invalid input
+    #  Invalid input
     if not company or experience_years < 0:
         return {
             "verified": False,
             "reason": "Invalid employment data"
         }
 
-    # ❌ Fresher rule (optional business rule)
+    #  Fresher rule (optional business rule)
     if experience_years == 0:
         return {
             "verified": False,
             "reason": "No work experience"
         }
 
-    # ✅ Income calculation (realistic growth)
+    #  Income calculation (realistic growth)
     base_salary = 30000
     increment_per_year = 5000
 

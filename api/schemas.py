@@ -7,9 +7,8 @@ class LoanApplicationRequest(BaseModel):
     pan_number: str
     monthly_income: float = Field(..., gt=0)
     experience_years: int = Field(..., ge=0)
-    loan_amount: float = Field(..., gt=0)   # 👈 NEW
-
-    # ✅ PAN format validation
+    loan_amount: float = Field(..., gt=0)  
+    #  PAN format validation
     @field_validator("pan_number")
     @classmethod
     def validate_pan(cls, v):
@@ -18,7 +17,7 @@ class LoanApplicationRequest(BaseModel):
             raise ValueError("Invalid PAN format")
         return v
 
-    # ✅ Aadhaar numeric check
+    #  Aadhaar numeric check
     @field_validator("aadhar_number")
     @classmethod
     def validate_aadhar(cls, v):
@@ -37,4 +36,4 @@ class LoanDecisionResponse(BaseModel):
     loan_amount: float
     risk_score: int
     decision: str
-    reasons: list[str]   # 👈 NEW (very important)
+    reasons: list[str]  

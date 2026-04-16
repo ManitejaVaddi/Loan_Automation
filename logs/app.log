@@ -118,3 +118,99 @@
 2026-04-14 01:16:43,939 | INFO | db | Database tables initialized successfully
 2026-04-14 01:16:44,264 | INFO | db | Loan decision stored | Applicant=User_9952 | Decision=APPROVED
 2026-04-14 01:16:44,264 | INFO | db | Loan decision stored | Applicant=User_9952 | Decision=APPROVED
+2026-04-14 18:13:05,304 | INFO | main | Starting loan application processing
+2026-04-14 18:13:05,304 | INFO | main | Starting loan application processing
+2026-04-14 18:13:05,327 | INFO | db | Database tables initialized successfully
+2026-04-14 18:13:05,327 | INFO | db | Database tables initialized successfully
+2026-04-14 18:13:05,645 | INFO | db | Loan decision stored | Applicant=User_9012 | Decision=REVIEW
+2026-04-14 18:13:05,645 | INFO | db | Loan decision stored | Applicant=User_9012 | Decision=REVIEW
+2026-04-14 18:13:05,649 | INFO | main | Loan processed | User_9012 | Score=41 | Decision=REVIEW
+2026-04-14 18:13:05,649 | INFO | main | Loan processed | User_9012 | Score=41 | Decision=REVIEW
+2026-04-14 18:19:50,142 | INFO | main | Starting loan application processing
+2026-04-14 18:19:50,142 | INFO | main | Starting loan application processing
+2026-04-14 18:19:50,147 | INFO | db | Database tables initialized successfully
+2026-04-14 18:19:50,147 | INFO | db | Database tables initialized successfully
+2026-04-14 18:19:50,468 | INFO | db | Loan decision stored | Applicant=User_9012 | Decision=REJECTED
+2026-04-14 18:19:50,468 | INFO | db | Loan decision stored | Applicant=User_9012 | Decision=REJECTED
+2026-04-14 18:19:50,471 | INFO | main | Loan processed | User_9012 | Score=36 | Decision=REJECTED
+2026-04-14 18:19:50,471 | INFO | main | Loan processed | User_9012 | Score=36 | Decision=REJECTED
+2026-04-14 18:22:32,849 | INFO | main | Starting loan application processing
+2026-04-14 18:22:32,849 | INFO | main | Starting loan application processing
+2026-04-14 18:22:32,853 | INFO | db | Database tables initialized successfully
+2026-04-14 18:22:32,853 | INFO | db | Database tables initialized successfully
+2026-04-14 18:22:33,170 | INFO | db | Loan decision stored | Applicant=User_9012 | Decision=REVIEW
+2026-04-14 18:22:33,170 | INFO | db | Loan decision stored | Applicant=User_9012 | Decision=REVIEW
+2026-04-14 18:22:33,178 | INFO | main | Loan processed | User_9012 | Score=47 | Decision=REVIEW
+2026-04-14 18:22:33,178 | INFO | main | Loan processed | User_9012 | Score=47 | Decision=REVIEW
+2026-04-14 18:30:59,398 | INFO | main | Starting loan application processing
+2026-04-14 18:30:59,398 | INFO | main | Starting loan application processing
+2026-04-14 18:30:59,417 | INFO | db | Database tables initialized successfully
+2026-04-14 18:30:59,417 | INFO | db | Database tables initialized successfully
+2026-04-14 18:30:59,735 | INFO | db | Loan decision stored | Applicant=User_9012 | Decision=REVIEW
+2026-04-14 18:30:59,735 | INFO | db | Loan decision stored | Applicant=User_9012 | Decision=REVIEW
+2026-04-14 18:30:59,754 | INFO | main | Loan processed | User_9012 | Score=53 | Decision=REVIEW
+2026-04-14 18:30:59,754 | INFO | main | Loan processed | User_9012 | Score=53 | Decision=REVIEW
+2026-04-14 18:31:01,627 | INFO | main | Starting loan application processing
+2026-04-14 18:31:01,627 | INFO | main | Starting loan application processing
+2026-04-14 18:31:01,636 | INFO | db | Database tables initialized successfully
+2026-04-14 18:31:01,636 | INFO | db | Database tables initialized successfully
+2026-04-14 18:31:01,954 | INFO | db | Loan decision stored | Applicant=User_9012 | Decision=REVIEW
+2026-04-14 18:31:01,954 | INFO | db | Loan decision stored | Applicant=User_9012 | Decision=REVIEW
+2026-04-14 18:31:01,957 | INFO | main | Loan processed | User_9012 | Score=43 | Decision=REVIEW
+2026-04-14 18:31:01,957 | INFO | main | Loan processed | User_9012 | Score=43 | Decision=REVIEW
+2026-04-14 18:31:03,171 | INFO | main | Starting loan application processing
+2026-04-14 18:31:03,171 | INFO | main | Starting loan application processing
+2026-04-14 18:31:03,177 | INFO | db | Database tables initialized successfully
+2026-04-14 18:31:03,177 | INFO | db | Database tables initialized successfully
+2026-04-14 18:31:03,499 | INFO | db | Loan decision stored | Applicant=User_9012 | Decision=REJECTED
+2026-04-14 18:31:03,499 | INFO | db | Loan decision stored | Applicant=User_9012 | Decision=REJECTED
+2026-04-14 18:31:03,502 | INFO | main | Loan processed | User_9012 | Score=38 | Decision=REJECTED
+2026-04-14 18:31:03,502 | INFO | main | Loan processed | User_9012 | Score=38 | Decision=REJECTED
+2026-04-14 18:31:12,577 | INFO | main | Starting loan application processing
+2026-04-14 18:31:12,577 | INFO | main | Starting loan application processing
+2026-04-14 18:31:12,582 | INFO | db | Database tables initialized successfully
+2026-04-14 18:31:12,582 | INFO | db | Database tables initialized successfully
+2026-04-14 18:31:12,906 | INFO | db | Loan decision stored | Applicant=User_9012 | Decision=REVIEW
+2026-04-14 18:31:12,906 | INFO | db | Loan decision stored | Applicant=User_9012 | Decision=REVIEW
+2026-04-14 18:31:12,912 | INFO | main | Loan processed | User_9012 | Score=67 | Decision=REVIEW
+2026-04-14 18:31:12,912 | INFO | main | Loan processed | User_9012 | Score=67 | Decision=REVIEW
+2026-04-14 18:31:14,577 | INFO | main | Starting loan application processing
+2026-04-14 18:31:14,577 | INFO | main | Starting loan application processing
+2026-04-14 18:31:14,587 | INFO | db | Database tables initialized successfully
+2026-04-14 18:31:14,587 | INFO | db | Database tables initialized successfully
+2026-04-14 18:31:14,909 | INFO | db | Loan decision stored | Applicant=User_9012 | Decision=REVIEW
+2026-04-14 18:31:14,909 | INFO | db | Loan decision stored | Applicant=User_9012 | Decision=REVIEW
+2026-04-14 18:31:14,915 | INFO | main | Loan processed | User_9012 | Score=58 | Decision=REVIEW
+2026-04-14 18:31:14,915 | INFO | main | Loan processed | User_9012 | Score=58 | Decision=REVIEW
+2026-04-14 18:31:18,743 | INFO | main | Starting loan application processing
+2026-04-14 18:31:18,743 | INFO | main | Starting loan application processing
+2026-04-14 18:31:18,749 | INFO | db | Database tables initialized successfully
+2026-04-14 18:31:18,749 | INFO | db | Database tables initialized successfully
+2026-04-14 18:31:19,063 | INFO | db | Loan decision stored | Applicant=User_9012 | Decision=REVIEW
+2026-04-14 18:31:19,063 | INFO | db | Loan decision stored | Applicant=User_9012 | Decision=REVIEW
+2026-04-14 18:31:19,068 | INFO | main | Loan processed | User_9012 | Score=67 | Decision=REVIEW
+2026-04-14 18:31:19,068 | INFO | main | Loan processed | User_9012 | Score=67 | Decision=REVIEW
+2026-04-14 18:31:21,424 | INFO | main | Starting loan application processing
+2026-04-14 18:31:21,424 | INFO | main | Starting loan application processing
+2026-04-14 18:31:21,444 | INFO | db | Database tables initialized successfully
+2026-04-14 18:31:21,444 | INFO | db | Database tables initialized successfully
+2026-04-14 18:31:21,766 | INFO | db | Loan decision stored | Applicant=User_9012 | Decision=APPROVED
+2026-04-14 18:31:21,766 | INFO | db | Loan decision stored | Applicant=User_9012 | Decision=APPROVED
+2026-04-14 18:31:21,770 | INFO | main | Loan processed | User_9012 | Score=74 | Decision=APPROVED
+2026-04-14 18:31:21,770 | INFO | main | Loan processed | User_9012 | Score=74 | Decision=APPROVED
+2026-04-14 18:40:31,216 | INFO | main | Starting loan application processing
+2026-04-14 18:40:31,216 | INFO | main | Starting loan application processing
+2026-04-14 18:40:31,262 | INFO | db | Database tables initialized successfully
+2026-04-14 18:40:31,262 | INFO | db | Database tables initialized successfully
+2026-04-14 18:40:31,587 | INFO | db | Loan decision stored | Applicant=User_9012 | Decision=APPROVED
+2026-04-14 18:40:31,587 | INFO | db | Loan decision stored | Applicant=User_9012 | Decision=APPROVED
+2026-04-14 18:40:31,594 | INFO | main | Loan processed | User_9012 | Score=75 | Decision=APPROVED
+2026-04-14 18:40:31,594 | INFO | main | Loan processed | User_9012 | Score=75 | Decision=APPROVED
+2026-04-16 22:06:48,657 | INFO | main | Starting loan application processing
+2026-04-16 22:06:48,657 | INFO | main | Starting loan application processing
+2026-04-16 22:06:48,676 | INFO | db | Database tables initialized successfully
+2026-04-16 22:06:48,676 | INFO | db | Database tables initialized successfully
+2026-04-16 22:06:48,991 | INFO | db | Loan decision stored | Applicant=User_9456 | Decision=REVIEW
+2026-04-16 22:06:48,991 | INFO | db | Loan decision stored | Applicant=User_9456 | Decision=REVIEW
+2026-04-16 22:06:48,997 | INFO | main | Loan processed | User_9456 | Score=48 | Decision=REVIEW
+2026-04-16 22:06:48,997 | INFO | main | Loan processed | User_9456 | Score=48 | Decision=REVIEW
