@@ -8,6 +8,9 @@ from api.schemas import LoanApplicationRequest, LoanDecisionResponse
 from main import process_loan_application
 from storage.db import fetch_all_decisions
 
+from auth.login import router as login_router
+from auth.register import router as register_router
+
 BASE_DIR = Path(__file__).resolve().parent
 
 app = FastAPI(
@@ -18,11 +21,15 @@ app = FastAPI(
     redoc_url="/redoc"
 )
 
+#  Auth Routes
+app.include_router(login_router, prefix="/auth", tags=["Auth"])
+app.include_router(register_router, prefix="/auth", tags=["Auth"])
+
 #  Static files
 app.mount("/static", StaticFiles(directory=BASE_DIR / "static"), name="static")
 
 
-#  Custom Swagger UI
+#  Swagger UI
 @app.get("/docs", include_in_schema=False)
 def custom_swagger_ui():
     return get_swagger_ui_html(
@@ -32,35 +39,39 @@ def custom_swagger_ui():
     )
 
 
-#  SINGLE CLEAN ENDPOINT (FIXED)
+#  Loan Apply API (FIXED)
 @app.post("/loan/apply", response_model=LoanDecisionResponse, tags=["Loan Processing"])
 def apply_loan(request: LoanApplicationRequest):
+    """
+    TEMP: user_id=1
+    Later: replace with logged-in user
+    """
+
     result = process_loan_application(
+        user_id=1,   #  IMPORTANT (temporary fix)
         aadhar_number=request.aadhar_number,
         pan_number=request.pan_number,
         monthly_income=request.monthly_income,
         experience_years=request.experience_years,
-        loan_amount=request.loan_amount   # ✅ FIXED
+        loan_amount=request.loan_amount
     )
 
-    #  Handle business failure
     if result["status"] == "FAILED":
         raise HTTPException(status_code=400, detail=result["reason"])
 
-    #  Handle system error
     if result["status"] == "ERROR":
         raise HTTPException(status_code=500, detail=result["message"])
 
     return result
 
 
-#  Audit endpoint
+# Audit endpoint
 @app.get("/loan/audit", tags=["Audit"])
 def audit_loans():
     return fetch_all_decisions()
 
 
-#  Serve frontend
+#  Default route → Login Page ONLY (FIXED)
 @app.get("/", include_in_schema=False)
-def serve_frontend():
-    return FileResponse(BASE_DIR / "static" / "index.html")
+def serve_login():
+    return FileResponse(BASE_DIR / "static" / "login.html")

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="page">
+
+    <div class="left">
+        <h1>Hello, Nice To See Here</h1>
+        <p>Register to start using the loan system.</p>
+
+        <div class="features">
+            <div>🚀 Easy Signup</div>
+            <div>🔒 Secure Data</div>
+            <div>📈 Smart Loan Insights</div>
+        </div>
+    </div>
+
+    <div class="right">
+        <div class="card">
+
+            <h2>Register</h2>
+
+            <input type="text" id="name" placeholder="Name">
+            <input type="email" id="email" placeholder="Email">
+            <input type="password" id="password" placeholder="Password">
+
+            <button onclick="register()">Register</button>
+
+            <p id="msg"></p>
+
+            <p class="link">
+                Already have account?
+                <a href="/">Login</a>
+            </p>
+
+        </div>
+    </div>
+
+</div>
+
+<script>
+async function register() {
+    const res = await fetch("/auth/register", {
+        method: "POST",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({
+            name: document.getElementById("name").value,
+            email: document.getElementById("email").value,
+            password: document.getElementById("password").value
+        })
+    });
+
+    const data = await res.json();
+
+    if (res.ok) {
+        alert("Registration successful!");
+        window.location.href = "/";
+    } else {
+        document.getElementById("msg").innerText = data.message || data.detail;
+    }
+}
+</script>
+
+</body>
+</html>

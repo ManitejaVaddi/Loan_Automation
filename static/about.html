@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>About - LoanAI</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+            <!-- NAVBAR -->
+<div class="navbar">
+    <div class="logo">LoanAI</div>
+    <div class="nav-links">
+        <a href="#">Home</a>
+        <a href="/static/about.html" class="active">About</a>
+        <a href="#">Contact</a>
+        <a href="#" onclick="logout()">Logout</a>
+    </div>
+</div>
+
+
+<!-- HERO SECTION -->
+<div class="hero">
+    <h1>About LoanAI</h1>
+    <p>Transforming loan approvals using intelligent automation and risk analysis</p>
+</div>
+
+<!-- OUR MISSION -->
+<div class="section">
+    <div class="mission">
+        <div class="mission-text">
+            <h2>Our Mission</h2>
+            <p>
+                Our mission is to revolutionize the loan approval process by replacing 
+                traditional manual verification with an intelligent, automated system.
+            </p>
+            <p>
+                We aim to provide fast, accurate, and secure loan decisions by analyzing 
+                applicant data such as credit score, income, experience, and financial history.
+            </p>
+            <p>
+                This system reduces processing time, minimizes human errors, and ensures 
+                fair decision-making using data-driven insights.
+            </p>
+        </div>
+
+        <!-- <div class="mission-img">
+            <img src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df" />
+        </div> -->
+    </div>
+</div>
+
+<!-- FEATURES -->
+<div class="section">
+    <h2 class="center">What Makes Us Different</h2>
+    <p class="center subtitle">Smart features designed for modern banking</p>
+
+    <div class="cards">
+        <div class="card-box">
+            <h3>⚡ Instant Processing</h3>
+            <p>Get loan decisions instantly without manual delays.</p>
+        </div>
+
+        <div class="card-box">
+            <h3>🤖 AI Risk Analysis</h3>
+            <p>Advanced scoring system evaluates applicant risk accurately.</p>
+        </div>
+
+        <div class="card-box">
+            <h3>🔒 Secure System</h3>
+            <p>Protected identity verification using Aadhaar & PAN validation.</p>
+        </div>
+    </div>
+</div>
+
+<!-- TECH STACK -->
+<div class="section">
+    <h2 class="center">Our Technology Stack</h2>
+    <p class="center subtitle">Built using modern backend architecture</p>
+
+    <div class="cards">
+        <div class="card-box">🐍 Python (FastAPI)</div>
+        <div class="card-box">🗄 SQLite Database</div>
+        <div class="card-box">⚙️ Rule-based AI Engine</div>
+        <div class="card-box">🌐 HTML + CSS UI</div>
+    </div>
+</div>
+
+<!-- CORE VALUES -->
+<div class="hero small">
+    <div class="values">
+        <div>
+            <h3>💡 Innovation</h3>
+            <p>Continuously improving loan decision intelligence.</p>
+        </div>
+
+        <div>
+            <h3>🤝 Trust</h3>
+            <p>Ensuring transparency and fairness in every decision.</p>
+        </div>
+
+        <div>
+            <h3>🚀 Efficiency</h3>
+            <p>Delivering fast and reliable loan approvals.</p>
+        </div>
+    </div>
+</div>
+
+<!-- CTA -->
+<div class="section center">
+    <h2>Ready to Get Started?</h2>
+    <p>Use our system to check loan eligibility instantly.</p>
+
+    <div class="buttons">
+        <button onclick="goDashboard()" class="primary-btn">Check Loan</button>
+        <button class="secondary-btn">Contact</button>
+    </div>
+</div>
+
+<script>
+function goDashboard() {
+    window.location.href = "/static/index.html";
+}
+</script>
+
+</body>
+</html>

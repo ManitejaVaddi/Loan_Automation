@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>LoanAI - Smart Loan System</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+    <div class="logo">LoanAI</div>
+    <div class="nav-links">
+        <a href="/static/home.html" class="active">Home</a>
+        <a href="/static/about.html">About</a>
+        <a href="#">Contact</a>
+        <a href="/">Login</a>
+        <button class="nav-btn">Get Started</button>
+    </div>
+</div>
+
+<!-- HERO -->
+<div class="hero">
+    <h1>Automated Loan Approval System</h1>
+    <p>Smart decision-making using risk analysis, income validation, and eligibility scoring</p>
+</div>
+
+<!-- FEATURES / LOGIC -->
+<div class="section">
+    <h2 class="center">How Our System Works</h2>
+    <p class="center subtitle">We evaluate applicants using multiple financial factors</p>
+
+    <div class="cards">
+        <div class="card-box">
+            <h3>💰 Income Analysis</h3>
+            <p>Higher monthly income increases loan approval chances and eligibility limit.</p>
+        </div>
+
+        <div class="card-box">
+            <h3>📊 Experience Factor</h3>
+            <p>Applicants with more work experience are considered financially stable.</p>
+        </div>
+
+        <div class="card-box">
+            <h3>🪪 Identity Verification</h3>
+            <p>Aadhaar and PAN are validated to ensure authenticity and fraud prevention.</p>
+        </div>
+    </div>
+</div>
+
+<!-- RISK SCORE -->
+<div class="section">
+    <h2 class="center">Risk Score Evaluation</h2>
+    <p class="center subtitle">We calculate a score before approving loans</p>
+
+    <div class="cards">
+        <div class="card-box">
+            <h3>🔵 Low Risk</h3>
+            <p>High income + strong experience → Loan Approved instantly.</p>
+        </div>
+
+        <div class="card-box">
+            <h3>🟡 Medium Risk</h3>
+            <p>Moderate income → Loan approved with conditions.</p>
+        </div>
+
+        <div class="card-box">
+            <h3>🔴 High Risk</h3>
+            <p>Low income or high loan request → Loan rejected.</p>
+        </div>
+    </div>
+</div>
+
+<!-- LOAN LOGIC -->
+<div class="section">
+    <h2 class="center">Loan Eligibility Logic</h2>
+    <p class="center subtitle">We use income vs loan ratio</p>
+
+    <div class="cards">
+        <div class="card-box">
+            <h3>📈 Loan Ratio</h3>
+            <p>Loan amount should not exceed a safe multiple of monthly income.</p>
+        </div>
+
+        <div class="card-box">
+            <h3>⚖️ Decision Engine</h3>
+            <p>System compares requested loan with risk score and financial capacity.</p>
+        </div>
+
+        <div class="card-box">
+            <h3>⚡ Instant Result</h3>
+            <p>No manual approval needed — results are generated instantly.</p>
+        </div>
+    </div>
+</div>
+
+<!-- STATS -->
+<div class="hero small">
+    <div class="values">
+        <div>
+            <h2>95%</h2>
+            <p>Accuracy</p>
+        </div>
+
+        <div>
+            <h2>2 Sec</h2>
+            <p>Decision Time</p>
+        </div>
+
+        <div>
+            <h2>100%</h2>
+            <p>Automated</p>
+        </div>
+    </div>
+</div>
+
+<!-- HOW IT WORKS -->
+<div class="section center">
+    <h2>How It Works</h2>
+    <p class="subtitle">Simple 3-step process</p>
+
+    <div class="cards">
+        <div class="card-box">
+            <h3>1️⃣ Enter Details</h3>
+            <p>Provide Aadhaar, PAN, income, and loan amount.</p>
+        </div>
+
+        <div class="card-box">
+            <h3>2️⃣ System Analysis</h3>
+            <p>Backend calculates risk score and eligibility.</p>
+        </div>
+
+        <div class="card-box">
+            <h3>3️⃣ Get Decision</h3>
+            <p>Instant approval or rejection with reason.</p>
+        </div>
+    </div>
+</div>
+
+<!-- CTA -->
+<div class="section center">
+    <h2>Try It Now</h2>
+    <p>Check your loan eligibility instantly</p>
+
+    <button onclick="goDashboard()" class="primary-btn">Check Loan</button>
+</div>
+
+<script>
+function goDashboard() {
+    window.location.href = "/static/index.html";
+}
+</script>
+
+</body>
+</html>

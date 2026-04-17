@@ -2,11 +2,11 @@ def calculate_risk_score(credit_score, income, existing_loans, experience_years,
     score = 0
     reasons = []
 
-    # ❌ Hard rejection rule
+    #  Hard rejection rule
     if credit_score < 550:
         return 0, ["Very low credit score"]
 
-    # ✅ Credit Score
+    #  Credit Score
     if credit_score >= 750:
         score += 40
     elif credit_score >= 650:
@@ -16,7 +16,7 @@ def calculate_risk_score(credit_score, income, existing_loans, experience_years,
         score += 10
         reasons.append("Low credit score")
 
-    # ✅ Income vs Loan Ratio
+    #  Income vs Loan Ratio
     ratio = loan_amount / income
     if ratio < 0.3:
         score += 30
@@ -27,7 +27,7 @@ def calculate_risk_score(credit_score, income, existing_loans, experience_years,
         score += 5
         reasons.append("High loan burden")
 
-    # ✅ Employment Stability
+    #  Employment Stability
     if experience_years >= 3:
         score += 20
     elif experience_years >= 1:
@@ -36,7 +36,7 @@ def calculate_risk_score(credit_score, income, existing_loans, experience_years,
     else:
         reasons.append("Unstable employment")
 
-    # ✅ Existing Loans Penalty
+    #  Existing Loans Penalty
     penalty = existing_loans * 5
     score -= penalty
     if existing_loans > 2:
@@ -52,3 +52,11 @@ def loan_decision(score):
         return "REVIEW"
     else:
         return "REJECTED"
+    
+def calculate_interest_rate(risk_score):
+    if risk_score >= 70:
+        return 8.5   # low risk
+    elif risk_score >= 50:
+        return 11.0  # medium risk
+    else:
+        return 14.5  # high risk

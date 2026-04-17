@@ -4,9 +4,15 @@ from ingestion.credit_api import fetch_credit_score
 from processing.cleaning import clean_applicant_data
 from processing.validation import validate_applicant
 
-from scoring.risk_engine import calculate_risk_score, loan_decision
+from scoring.risk_engine import (
+    calculate_risk_score,
+    loan_decision,
+    calculate_interest_rate   # ✅ NEW
+)
+
 from storage.db import create_tables, insert_decision
 from reporting.decision_report import generate_csv_report
+from storage.loan_db import create_loan_table, insert_loan
 
 from logger import setup_logger
 
@@ -14,18 +20,20 @@ logger = setup_logger()
 
 
 def process_loan_application(
+    user_id: int,   # ✅ NEW (VERY IMPORTANT)
     aadhar_number: str,
     pan_number: str,
     experience_years: int,
     loan_amount: float,
-    monthly_income: float   
+    monthly_income: float
 ) -> dict:
 
     try:
         logger.info("Starting loan application processing")
 
-        #  DB setup
+        # 🔹 DB setup
         create_tables()
+        create_loan_table()   # ✅ NEW
 
         # 🔹 Step 1: Identity Verification
         identity = verify_identity(aadhar_number)
@@ -38,11 +46,11 @@ def process_loan_application(
         credit = fetch_credit_score(pan_number)
         print("CREDIT:", credit)
 
-        # 🔹 Step 3: Build Applicant (FIXED)
+        # 🔹 Step 3: Build Applicant
         applicant = {
             "name": identity.get("name"),
             "credit_score": credit.get("credit_score"),
-            "monthly_income": monthly_income,   # ✅ from user
+            "monthly_income": monthly_income,
             "existing_loans": credit.get("existing_loans"),
             "experience_years": experience_years,
             "loan_amount": loan_amount
@@ -68,7 +76,13 @@ def process_loan_application(
 
         decision = loan_decision(risk_score)
 
-        # 🔹 Step 6: Save & Report
+        # 🔹 NEW: Loan Ratio
+        loan_ratio = round(cleaned["loan_amount"] / cleaned["monthly_income"], 2)
+
+        # 🔹 NEW: Interest Rate
+        interest_rate = calculate_interest_rate(risk_score)
+
+        # 🔹 Step 6: Save & Report (old system)
         cleaned.update({
             "risk_score": risk_score,
             "decision": decision
@@ -77,8 +91,23 @@ def process_loan_application(
         insert_decision(cleaned)
         generate_csv_report(cleaned)
 
+        # 🔥 NEW: SAVE LOAN IN USER TABLE
+        insert_loan(user_id, {
+            "applicant_name": cleaned["name"],
+            "credit_score": cleaned["credit_score"],
+            "monthly_income": cleaned["monthly_income"],
+            "existing_loans": cleaned["existing_loans"],
+            "experience_years": cleaned["experience_years"],
+            "loan_amount": cleaned["loan_amount"],
+            "risk_score": risk_score,
+            "decision": decision,
+            "loan_ratio": loan_ratio,
+            "interest_rate": interest_rate
+        })
+
         logger.info(f"Loan processed | {cleaned['name']} → {decision}")
 
+        # 🔹 Final Response
         return {
             "status": "SUCCESS",
             "applicant_name": cleaned["name"],
@@ -89,6 +118,8 @@ def process_loan_application(
             "loan_amount": cleaned["loan_amount"],
             "risk_score": risk_score,
             "decision": decision,
+            "loan_ratio": loan_ratio,
+            "interest_rate": interest_rate,
             "reasons": reasons
         }
 
@@ -101,14 +132,15 @@ def process_loan_application(
         }
 
 
-#  CLI test
+# 🔹 CLI test
 if __name__ == "__main__":
     result = process_loan_application(
+        user_id=1,   # ✅ REQUIRED NOW
         aadhar_number="123456789012",
         pan_number="ABCDE1234F",
         experience_years=3,
         loan_amount=200000,
-        monthly_income=50000   
+        monthly_income=50000
     )
 
     print(result)
