@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
     const sessionToken = localStorage.getItem("session_token");
     const userName = localStorage.getItem("user_name") || "User";
     const userRole = localStorage.getItem("user_role") || "customer";
@@ -109,12 +109,16 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 
-    loadHistory();
-    if (canReview) {
-        loadReviewQueue();
-        loadReviewAnalytics();
-    }
-    runSimulation();
+    await loadHistory();
+
+await prefillSimulatorFromHistory(); 
+
+if (canReview) {
+    loadReviewQueue();
+    loadReviewAnalytics();
+}
+
+runSimulation();
 
     function renderDecision(data) {
         const reasons = data.reasons.length
@@ -195,6 +199,41 @@ document.addEventListener("DOMContentLoaded", () => {
             emptyHistory.classList.remove("hidden");
         }
     }
+async function prefillSimulatorFromHistory() {
+    try {
+        const response = await fetch("/loan/history", {
+            headers: authHeaders
+        });
+
+        const data = await response.json();
+        if (!response.ok) throw data;
+
+        if (!data.applications || data.applications.length === 0) return;
+
+        const last = data.applications[data.applications.length - 1];
+
+        
+        document.getElementById("simCreditScore").value = last.credit_score;
+        document.getElementById("simIncome").value = last.monthly_income;
+        document.getElementById("simLoanAmount").value = last.loan_amount;
+        document.getElementById("simExperience").value = last.experience_years;
+        document.getElementById("simExistingLoans").value = last.existing_loans;
+
+       
+        document.getElementById("simCreditScoreValue").innerText = last.credit_score;
+        document.getElementById("simIncomeValue").innerText = formatCurrencyNumber(last.monthly_income);
+        document.getElementById("simLoanAmountValue").innerText = formatCurrencyNumber(last.loan_amount);
+        document.getElementById("simExperienceValue").innerText = last.experience_years;
+        document.getElementById("simExistingLoansValue").innerText = last.existing_loans;
+
+        runSimulation();
+
+    } catch (error) {
+        console.log("Prefill failed", error);
+    }
+}
+
+
 
     function renderHistory(applications) {
         historyBody.innerHTML = "";
