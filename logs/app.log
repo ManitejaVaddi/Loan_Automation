@@ -232,3 +232,329 @@
 2026-04-18 00:42:47,033 | INFO | db | Database tables initialized successfully
 2026-04-18 00:42:47,357 | INFO | db | Loan decision stored | Applicant=User_8999 | Decision=REVIEW
 2026-04-18 00:42:47,357 | INFO | db | Loan decision stored | Applicant=User_8999 | Decision=REVIEW
+2026-04-18 01:38:54,534 | INFO | main | Starting loan application processing
+2026-04-18 01:38:54,534 | INFO | main | Starting loan application processing
+2026-04-18 01:38:54,540 | INFO | db | Database tables initialized successfully
+2026-04-18 01:38:54,540 | INFO | db | Database tables initialized successfully
+2026-04-18 01:38:54,860 | INFO | db | Loan decision stored | Applicant=User_9899 | Decision=APPROVED
+2026-04-18 01:38:54,860 | INFO | db | Loan decision stored | Applicant=User_9899 | Decision=APPROVED
+2026-04-19 23:58:24,963 | INFO | main | Starting loan application processing
+2026-04-19 23:58:24,963 | INFO | main | Starting loan application processing
+2026-04-19 23:58:24,969 | INFO | db | Database tables initialized successfully
+2026-04-19 23:58:24,969 | INFO | db | Database tables initialized successfully
+2026-04-19 23:58:25,288 | INFO | db | Loan decision stored | Applicant=User_9458 | Decision=REVIEW
+2026-04-19 23:58:25,288 | INFO | db | Loan decision stored | Applicant=User_9458 | Decision=REVIEW
+2026-04-19 23:58:25,299 | INFO | main | Loan processed | User_9458 -> REVIEW
+2026-04-19 23:58:25,299 | INFO | main | Loan processed | User_9458 -> REVIEW
+2026-04-20 00:25:04,976 | INFO | main | Starting loan application processing
+2026-04-20 00:25:04,976 | INFO | main | Starting loan application processing
+2026-04-20 00:25:04,981 | INFO | db | Database tables initialized successfully
+2026-04-20 00:25:04,981 | INFO | db | Database tables initialized successfully
+2026-04-20 00:25:05,298 | INFO | db | Loan decision stored | Applicant=User_9978 | Decision=REVIEW
+2026-04-20 00:25:05,298 | INFO | db | Loan decision stored | Applicant=User_9978 | Decision=REVIEW
+2026-04-20 00:25:05,300 | ERROR | main | Processing error
+Traceback (most recent call last):
+  File "C:\Users\Maniteja\Desktop\loan_automation\main.py", line 75, in process_loan_application
+    insert_loan(user_id, {
+    ~~~~~~~~~~~^^^^^^^^^^^
+        "applicant_name": cleaned["name"],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<8 lines>...
+        "interest_rate": interest_rate
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    })
+    ^^
+  File "C:\Users\Maniteja\Desktop\loan_automation\storage\loan_db.py", line 56, in insert_loan
+    cursor.execute("""
+    ~~~~~~~~~~~~~~^^^^
+        INSERT INTO loans (
+        ^^^^^^^^^^^^^^^^^^^
+    ...<32 lines>...
+        None
+        ^^^^
+    ))
+    ^^
+sqlite3.OperationalError: 15 values for 16 columns
+2026-04-20 00:25:05,300 | ERROR | main | Processing error
+Traceback (most recent call last):
+  File "C:\Users\Maniteja\Desktop\loan_automation\main.py", line 75, in process_loan_application
+    insert_loan(user_id, {
+    ~~~~~~~~~~~^^^^^^^^^^^
+        "applicant_name": cleaned["name"],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<8 lines>...
+        "interest_rate": interest_rate
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    })
+    ^^
+  File "C:\Users\Maniteja\Desktop\loan_automation\storage\loan_db.py", line 56, in insert_loan
+    cursor.execute("""
+    ~~~~~~~~~~~~~~^^^^
+        INSERT INTO loans (
+        ^^^^^^^^^^^^^^^^^^^
+    ...<32 lines>...
+        None
+        ^^^^
+    ))
+    ^^
+sqlite3.OperationalError: 15 values for 16 columns
+2026-04-20 00:25:26,678 | INFO | main | Starting loan application processing
+2026-04-20 00:25:26,678 | INFO | main | Starting loan application processing
+2026-04-20 00:25:26,681 | INFO | db | Database tables initialized successfully
+2026-04-20 00:25:26,681 | INFO | db | Database tables initialized successfully
+2026-04-20 00:25:27,000 | INFO | db | Loan decision stored | Applicant=User_9978 | Decision=REVIEW
+2026-04-20 00:25:27,000 | INFO | db | Loan decision stored | Applicant=User_9978 | Decision=REVIEW
+2026-04-20 00:25:27,003 | ERROR | main | Processing error
+Traceback (most recent call last):
+  File "C:\Users\Maniteja\Desktop\loan_automation\main.py", line 75, in process_loan_application
+    insert_loan(user_id, {
+    ~~~~~~~~~~~^^^^^^^^^^^
+        "applicant_name": cleaned["name"],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<8 lines>...
+        "interest_rate": interest_rate
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    })
+    ^^
+  File "C:\Users\Maniteja\Desktop\loan_automation\storage\loan_db.py", line 56, in insert_loan
+    cursor.execute("""
+    ~~~~~~~~~~~~~~^^^^
+        INSERT INTO loans (
+        ^^^^^^^^^^^^^^^^^^^
+    ...<32 lines>...
+        None
+        ^^^^
+    ))
+    ^^
+sqlite3.OperationalError: 15 values for 16 columns
+2026-04-20 00:25:27,003 | ERROR | main | Processing error
+Traceback (most recent call last):
+  File "C:\Users\Maniteja\Desktop\loan_automation\main.py", line 75, in process_loan_application
+    insert_loan(user_id, {
+    ~~~~~~~~~~~^^^^^^^^^^^
+        "applicant_name": cleaned["name"],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<8 lines>...
+        "interest_rate": interest_rate
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    })
+    ^^
+  File "C:\Users\Maniteja\Desktop\loan_automation\storage\loan_db.py", line 56, in insert_loan
+    cursor.execute("""
+    ~~~~~~~~~~~~~~^^^^
+        INSERT INTO loans (
+        ^^^^^^^^^^^^^^^^^^^
+    ...<32 lines>...
+        None
+        ^^^^
+    ))
+    ^^
+sqlite3.OperationalError: 15 values for 16 columns
+2026-04-20 00:26:11,083 | INFO | main | Starting loan application processing
+2026-04-20 00:26:11,083 | INFO | main | Starting loan application processing
+2026-04-20 00:26:11,087 | INFO | db | Database tables initialized successfully
+2026-04-20 00:26:11,087 | INFO | db | Database tables initialized successfully
+2026-04-20 00:26:11,405 | INFO | db | Loan decision stored | Applicant=User_9978 | Decision=REVIEW
+2026-04-20 00:26:11,405 | INFO | db | Loan decision stored | Applicant=User_9978 | Decision=REVIEW
+2026-04-20 00:26:11,407 | ERROR | main | Processing error
+Traceback (most recent call last):
+  File "C:\Users\Maniteja\Desktop\loan_automation\main.py", line 75, in process_loan_application
+    insert_loan(user_id, {
+    ~~~~~~~~~~~^^^^^^^^^^^
+        "applicant_name": cleaned["name"],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<8 lines>...
+        "interest_rate": interest_rate
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    })
+    ^^
+  File "C:\Users\Maniteja\Desktop\loan_automation\storage\loan_db.py", line 56, in insert_loan
+    cursor.execute("""
+    ~~~~~~~~~~~~~~^^^^
+        INSERT INTO loans (
+        ^^^^^^^^^^^^^^^^^^^
+    ...<32 lines>...
+        None
+        ^^^^
+    ))
+    ^^
+sqlite3.OperationalError: 15 values for 16 columns
+2026-04-20 00:26:11,407 | ERROR | main | Processing error
+Traceback (most recent call last):
+  File "C:\Users\Maniteja\Desktop\loan_automation\main.py", line 75, in process_loan_application
+    insert_loan(user_id, {
+    ~~~~~~~~~~~^^^^^^^^^^^
+        "applicant_name": cleaned["name"],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<8 lines>...
+        "interest_rate": interest_rate
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    })
+    ^^
+  File "C:\Users\Maniteja\Desktop\loan_automation\storage\loan_db.py", line 56, in insert_loan
+    cursor.execute("""
+    ~~~~~~~~~~~~~~^^^^
+        INSERT INTO loans (
+        ^^^^^^^^^^^^^^^^^^^
+    ...<32 lines>...
+        None
+        ^^^^
+    ))
+    ^^
+sqlite3.OperationalError: 15 values for 16 columns
+2026-04-20 00:26:17,194 | INFO | main | Starting loan application processing
+2026-04-20 00:26:17,194 | INFO | main | Starting loan application processing
+2026-04-20 00:26:17,197 | INFO | db | Database tables initialized successfully
+2026-04-20 00:26:17,197 | INFO | db | Database tables initialized successfully
+2026-04-20 00:26:17,514 | INFO | db | Loan decision stored | Applicant=User_9978 | Decision=REVIEW
+2026-04-20 00:26:17,514 | INFO | db | Loan decision stored | Applicant=User_9978 | Decision=REVIEW
+2026-04-20 00:26:17,516 | ERROR | main | Processing error
+Traceback (most recent call last):
+  File "C:\Users\Maniteja\Desktop\loan_automation\main.py", line 75, in process_loan_application
+    insert_loan(user_id, {
+    ~~~~~~~~~~~^^^^^^^^^^^
+        "applicant_name": cleaned["name"],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<8 lines>...
+        "interest_rate": interest_rate
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    })
+    ^^
+  File "C:\Users\Maniteja\Desktop\loan_automation\storage\loan_db.py", line 56, in insert_loan
+    cursor.execute("""
+    ~~~~~~~~~~~~~~^^^^
+        INSERT INTO loans (
+        ^^^^^^^^^^^^^^^^^^^
+    ...<32 lines>...
+        None
+        ^^^^
+    ))
+    ^^
+sqlite3.OperationalError: 15 values for 16 columns
+2026-04-20 00:26:17,516 | ERROR | main | Processing error
+Traceback (most recent call last):
+  File "C:\Users\Maniteja\Desktop\loan_automation\main.py", line 75, in process_loan_application
+    insert_loan(user_id, {
+    ~~~~~~~~~~~^^^^^^^^^^^
+        "applicant_name": cleaned["name"],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<8 lines>...
+        "interest_rate": interest_rate
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    })
+    ^^
+  File "C:\Users\Maniteja\Desktop\loan_automation\storage\loan_db.py", line 56, in insert_loan
+    cursor.execute("""
+    ~~~~~~~~~~~~~~^^^^
+        INSERT INTO loans (
+        ^^^^^^^^^^^^^^^^^^^
+    ...<32 lines>...
+        None
+        ^^^^
+    ))
+    ^^
+sqlite3.OperationalError: 15 values for 16 columns
+2026-04-20 00:26:29,553 | INFO | main | Starting loan application processing
+2026-04-20 00:26:29,553 | INFO | main | Starting loan application processing
+2026-04-20 00:26:29,556 | INFO | db | Database tables initialized successfully
+2026-04-20 00:26:29,556 | INFO | db | Database tables initialized successfully
+2026-04-20 00:26:29,868 | INFO | db | Loan decision stored | Applicant=User_9978 | Decision=REVIEW
+2026-04-20 00:26:29,868 | INFO | db | Loan decision stored | Applicant=User_9978 | Decision=REVIEW
+2026-04-20 00:26:29,870 | ERROR | main | Processing error
+Traceback (most recent call last):
+  File "C:\Users\Maniteja\Desktop\loan_automation\main.py", line 75, in process_loan_application
+    insert_loan(user_id, {
+    ~~~~~~~~~~~^^^^^^^^^^^
+        "applicant_name": cleaned["name"],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<8 lines>...
+        "interest_rate": interest_rate
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    })
+    ^^
+  File "C:\Users\Maniteja\Desktop\loan_automation\storage\loan_db.py", line 56, in insert_loan
+    cursor.execute("""
+    ~~~~~~~~~~~~~~^^^^
+        INSERT INTO loans (
+        ^^^^^^^^^^^^^^^^^^^
+    ...<32 lines>...
+        None
+        ^^^^
+    ))
+    ^^
+sqlite3.OperationalError: 15 values for 16 columns
+2026-04-20 00:26:29,870 | ERROR | main | Processing error
+Traceback (most recent call last):
+  File "C:\Users\Maniteja\Desktop\loan_automation\main.py", line 75, in process_loan_application
+    insert_loan(user_id, {
+    ~~~~~~~~~~~^^^^^^^^^^^
+        "applicant_name": cleaned["name"],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<8 lines>...
+        "interest_rate": interest_rate
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    })
+    ^^
+  File "C:\Users\Maniteja\Desktop\loan_automation\storage\loan_db.py", line 56, in insert_loan
+    cursor.execute("""
+    ~~~~~~~~~~~~~~^^^^
+        INSERT INTO loans (
+        ^^^^^^^^^^^^^^^^^^^
+    ...<32 lines>...
+        None
+        ^^^^
+    ))
+    ^^
+sqlite3.OperationalError: 15 values for 16 columns
+2026-04-20 00:27:43,484 | INFO | main | Starting loan application processing
+2026-04-20 00:27:43,484 | INFO | main | Starting loan application processing
+2026-04-20 00:27:43,488 | INFO | db | Database tables initialized successfully
+2026-04-20 00:27:43,488 | INFO | db | Database tables initialized successfully
+2026-04-20 00:27:43,798 | INFO | db | Loan decision stored | Applicant=User_9999 | Decision=REVIEW
+2026-04-20 00:27:43,798 | INFO | db | Loan decision stored | Applicant=User_9999 | Decision=REVIEW
+2026-04-20 00:27:43,800 | ERROR | main | Processing error
+Traceback (most recent call last):
+  File "C:\Users\Maniteja\Desktop\loan_automation\main.py", line 75, in process_loan_application
+    insert_loan(user_id, {
+    ~~~~~~~~~~~^^^^^^^^^^^
+        "applicant_name": cleaned["name"],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<8 lines>...
+        "interest_rate": interest_rate
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    })
+    ^^
+  File "C:\Users\Maniteja\Desktop\loan_automation\storage\loan_db.py", line 56, in insert_loan
+    cursor.execute("""
+    ~~~~~~~~~~~~~~^^^^
+        INSERT INTO loans (
+        ^^^^^^^^^^^^^^^^^^^
+    ...<32 lines>...
+        None
+        ^^^^
+    ))
+    ^^
+sqlite3.OperationalError: 15 values for 16 columns
+2026-04-20 00:27:43,800 | ERROR | main | Processing error
+Traceback (most recent call last):
+  File "C:\Users\Maniteja\Desktop\loan_automation\main.py", line 75, in process_loan_application
+    insert_loan(user_id, {
+    ~~~~~~~~~~~^^^^^^^^^^^
+        "applicant_name": cleaned["name"],
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<8 lines>...
+        "interest_rate": interest_rate
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    })
+    ^^
+  File "C:\Users\Maniteja\Desktop\loan_automation\storage\loan_db.py", line 56, in insert_loan
+    cursor.execute("""
+    ~~~~~~~~~~~~~~^^^^
+        INSERT INTO loans (
+        ^^^^^^^^^^^^^^^^^^^
+    ...<32 lines>...
+        None
+        ^^^^
+    ))
+    ^^
+sqlite3.OperationalError: 15 values for 16 columns

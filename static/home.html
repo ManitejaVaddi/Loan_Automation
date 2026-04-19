@@ -150,6 +150,14 @@
 function goDashboard() {
     window.location.href = "/static/index.html";
 }
+
+function logout() {
+    localStorage.removeItem("user_id");
+    localStorage.removeItem("user_name");
+    localStorage.removeItem("user_role");
+    localStorage.removeItem("session_token");
+    window.location.href = "/";
+}
 </script>
 
 </body>

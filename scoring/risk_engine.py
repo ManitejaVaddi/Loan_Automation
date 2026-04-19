@@ -60,3 +60,72 @@ def calculate_interest_rate(risk_score):
         return 11.0  # medium risk
     else:
         return 14.5  # high risk
+
+
+def generate_improvement_suggestions(
+    credit_score,
+    income,
+    existing_loans,
+    experience_years,
+    loan_amount,
+    decision
+):
+    suggestions = []
+    loan_ratio = loan_amount / income
+
+    if decision == "APPROVED":
+        suggestions.append("You already qualify. A lower repayment burden can help you secure better rates.")
+    if credit_score < 700:
+        suggestions.append("Improve your credit score above 700 to strengthen approval confidence.")
+    if loan_ratio >= 0.6:
+        suggested_amount = round(income * 0.5, 2)
+        suggestions.append(
+            f"Reduce the requested loan amount closer to {suggested_amount} to lower repayment burden."
+        )
+    if existing_loans > 1:
+        suggestions.append("Closing at least one existing loan can improve your eligibility.")
+    if experience_years < 2:
+        suggestions.append("A longer employment history can make the application look more stable.")
+    if income < 40000:
+        suggestions.append("Higher verified income or a co-applicant can improve affordability assessment.")
+
+    if not suggestions:
+        suggestions.append("Your profile is balanced. Maintain these financial habits for future applications.")
+
+    return suggestions
+
+
+def build_loan_assessment(
+    credit_score,
+    income,
+    existing_loans,
+    experience_years,
+    loan_amount
+):
+    risk_score, reasons = calculate_risk_score(
+        credit_score,
+        income,
+        existing_loans,
+        experience_years,
+        loan_amount
+    )
+    decision = loan_decision(risk_score)
+    loan_ratio = round(loan_amount / income, 2)
+    interest_rate = calculate_interest_rate(risk_score)
+    improvement_suggestions = generate_improvement_suggestions(
+        credit_score,
+        income,
+        existing_loans,
+        experience_years,
+        loan_amount,
+        decision
+    )
+
+    return {
+        "risk_score": risk_score,
+        "decision": decision,
+        "loan_ratio": loan_ratio,
+        "interest_rate": interest_rate,
+        "reasons": reasons,
+        "improvement_suggestions": improvement_suggestions
+    }

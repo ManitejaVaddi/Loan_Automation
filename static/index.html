@@ -2,87 +2,188 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Automated Loan Approval System</title>
+    <title>LoanAI Dashboard</title>
     <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
-        <!-- NAVBAR -->
 <div class="navbar">
     <div class="logo">LoanAI</div>
     <div class="nav-links">
-        <a href="/static/home.html"class="active">Home</a>
-        <a href="/static/about.html" class="active">About</a>
-        <a href="#">Contact</a>
+        <a href="/static/home.html">Home</a>
+        <a href="/static/about.html">About</a>
+        <a href="/static/index.html" class="active">Dashboard</a>
         <a href="#" onclick="logout()">Logout</a>
     </div>
 </div>
 
-    <!-- LEFT SIDE (optional branding like login) -->
-    <div class="left">
-        <h1>Automated Loan Approval</h1>
-        <p>Check eligibility and get instant decisions.</p>
+<section class="dashboard-shell">
+    <div class="dashboard-intro">
+        <p class="eyebrow">Explainable loan intelligence</p>
+        <h1 id="welcomeText">Welcome back</h1>
+        <p>
+            Submit a real application, understand the decision instantly, and simulate better scenarios before applying again.
+        </p>
+    </div>
 
-        <div class="features">
-            <div>📊 Smart Risk Analysis</div>
-            <div>⚡ Instant Approval</div>
-            <div>🔒 Secure Processing</div>
+    <div class="stats-grid">
+        <div class="stat-card">
+            <span>Total Applications</span>
+            <strong id="totalApplications">0</strong>
+        </div>
+        <div class="stat-card">
+            <span>Latest Decision</span>
+            <strong id="latestDecision">-</strong>
+        </div>
+        <div class="stat-card">
+            <span>Average Risk Score</span>
+            <strong id="avgRiskScore">-</strong>
+        </div>
+        <div class="stat-card">
+            <span>Pending Reviews</span>
+            <strong id="pendingReviews">0</strong>
         </div>
     </div>
 
-<div class="right">
-
-    <div class="card">
-
-        <h1>Automated Loan Approval</h1>
-        <p class="subtitle">Internal Bank Loan Processing Tool</p>
-
-        <form id="loanForm">
-
-            <div class="form-group">
-                <label>Aadhaar Number</label>
-                <input type="text" id="aadhar" minlength="12" maxlength="12" required>
-            </div>
-
-            <div class="form-group">
-                <label>PAN Number</label>
-                <input type="text" id="pan" required>
-            </div>
-
-            <div class="form-group">
-                <label>Monthly Income (₹)</label>
-                <input type="number" id="income" min="1" required>
-            </div>
-
-            <div class="form-group">
-                <label>Experience (Years)</label>
-                <input type="number" id="experience" min="0" required>
-            </div>
-
-            <div class="form-group">
-                <label>Loan Amount (₹)</label>
-                <input type="number" id="loan_amount" required>
-            </div>
-
-            <button type="submit">Check Loan Eligibility</button>
-
-        </form>
-
-        <div id="loading" class="hidden">Processing...</div>
-        <div id="result" class="result hidden"></div>
-
-        <button class="logout-btn" onclick="logout()">Logout</button>
-
+    <div id="operationsAnalytics" class="analytics-grid hidden">
+        <div class="stat-card">
+            <span>Approval Rate</span>
+            <strong id="approvalRate">0%</strong>
+        </div>
+        <div class="stat-card">
+            <span>Approved Cases</span>
+            <strong id="approvedCount">0</strong>
+        </div>
+        <div class="stat-card">
+            <span>Rejected Cases</span>
+            <strong id="rejectedCount">0</strong>
+        </div>
+        <div class="stat-card">
+            <span>Avg Review Turnaround</span>
+            <strong id="avgTurnaround">0h</strong>
+        </div>
     </div>
 
-</div>
+    <div class="workspace-grid">
+        <div class="card form-card">
+            <h2>New Loan Application</h2>
+            <p class="subtitle">Fill in verified details to receive an instant decision with clear next steps.</p>
 
-<script>
-function logout() {
-    window.location.href = "/";
-}
-</script>
+            <form id="loanForm">
+                <div class="form-group">
+                    <label>Aadhaar Number</label>
+                    <input type="text" id="aadhar" minlength="12" maxlength="12" required>
+                </div>
+
+                <div class="form-group">
+                    <label>PAN Number</label>
+                    <input type="text" id="pan" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Monthly Income (Rs.)</label>
+                    <input type="number" id="income" min="1" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Experience (Years)</label>
+                    <input type="number" id="experience" min="0" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Loan Amount (Rs.)</label>
+                    <input type="number" id="loan_amount" min="1" required>
+                </div>
+
+                <button type="submit">Check Loan Eligibility</button>
+            </form>
+
+            <div id="loading" class="loading hidden">Processing your application...</div>
+            <div id="result" class="result hidden"></div>
+        </div>
+
+        <div class="card history-card">
+            <h2>Your Loan History</h2>
+            <p class="subtitle">See recent applications, approval patterns, and how your risk profile is moving.</p>
+
+            <p id="emptyHistory" class="empty-state hidden"></p>
+
+            <div class="table-wrap">
+                <table class="history-table">
+                    <thead>
+                        <tr>
+                            <th>Applicant</th>
+                            <th>Loan Amount</th>
+                            <th>Risk Score</th>
+                            <th>Decision</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody id="historyBody"></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="card simulator-card">
+        <div class="simulator-header">
+            <div>
+                <p class="eyebrow">Eligibility simulator</p>
+                <h2>What changes would improve approval?</h2>
+            </div>
+            <p class="subtitle">
+                Try alternative financial scenarios without creating a real application record.
+            </p>
+        </div>
+
+        <div class="simulator-grid">
+            <div class="sim-control">
+                <label for="simCreditScore">Credit Score</label>
+                <input type="range" id="simCreditScore" min="300" max="900" value="720" step="10">
+                <span id="simCreditScoreValue">720</span>
+            </div>
+            <div class="sim-control">
+                <label for="simIncome">Monthly Income (Rs.)</label>
+                <input type="range" id="simIncome" min="10000" max="200000" value="50000" step="5000">
+                <span id="simIncomeValue">50,000</span>
+            </div>
+            <div class="sim-control">
+                <label for="simLoanAmount">Loan Amount (Rs.)</label>
+                <input type="range" id="simLoanAmount" min="10000" max="1000000" value="200000" step="10000">
+                <span id="simLoanAmountValue">200,000</span>
+            </div>
+            <div class="sim-control">
+                <label for="simExperience">Experience (Years)</label>
+                <input type="range" id="simExperience" min="0" max="20" value="3" step="1">
+                <span id="simExperienceValue">3</span>
+            </div>
+            <div class="sim-control">
+                <label for="simExistingLoans">Existing Loans</label>
+                <input type="range" id="simExistingLoans" min="0" max="5" value="1" step="1">
+                <span id="simExistingLoansValue">1</span>
+            </div>
+        </div>
+
+        <div id="simulatorResult" class="simulator-result">
+            <p class="simulator-empty">Move the sliders to see how the decision changes.</p>
+        </div>
+    </div>
+
+    <div id="reviewerPanel" class="card reviewer-card hidden">
+        <div class="simulator-header">
+            <div>
+                <p class="eyebrow">Reviewer panel</p>
+                <h2>Manual review queue</h2>
+            </div>
+            <p class="subtitle">
+                Review borderline applications, record notes, and finalize the bank decision.
+            </p>
+        </div>
+
+        <p id="emptyReviewQueue" class="empty-state hidden"></p>
+        <div id="reviewQueue" class="review-grid"></div>
+    </div>
+</section>
 
 <script src="/static/app.js"></script>
-
 </body>
 </html>

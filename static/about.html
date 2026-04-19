@@ -11,7 +11,7 @@
 <div class="navbar">
     <div class="logo">LoanAI</div>
     <div class="nav-links">
-        <a href="#">Home</a>
+        <a href="/static/home.html">Home</a>
         <a href="/static/about.html" class="active">About</a>
         <a href="#">Contact</a>
         <a href="#" onclick="logout()">Logout</a>
@@ -57,17 +57,17 @@
 
     <div class="cards">
         <div class="card-box">
-            <h3>⚡ Instant Processing</h3>
+            <h3> Instant Processing</h3>
             <p>Get loan decisions instantly without manual delays.</p>
         </div>
 
         <div class="card-box">
-            <h3>🤖 AI Risk Analysis</h3>
+            <h3> AI Risk Analysis</h3>
             <p>Advanced scoring system evaluates applicant risk accurately.</p>
         </div>
 
         <div class="card-box">
-            <h3>🔒 Secure System</h3>
+            <h3> Secure System</h3>
             <p>Protected identity verification using Aadhaar & PAN validation.</p>
         </div>
     </div>
@@ -79,10 +79,10 @@
     <p class="center subtitle">Built using modern backend architecture</p>
 
     <div class="cards">
-        <div class="card-box">🐍 Python (FastAPI)</div>
-        <div class="card-box">🗄 SQLite Database</div>
-        <div class="card-box">⚙️ Rule-based AI Engine</div>
-        <div class="card-box">🌐 HTML + CSS UI</div>
+        <div class="card-box"> Python (FastAPI)</div>
+        <div class="card-box"> SQLite Database</div>
+        <div class="card-box"> Rule-based AI Engine</div>
+        <div class="card-box"> HTML + CSS UI</div>
     </div>
 </div>
 
@@ -90,17 +90,17 @@
 <div class="hero small">
     <div class="values">
         <div>
-            <h3>💡 Innovation</h3>
+            <h3>Innovation</h3>
             <p>Continuously improving loan decision intelligence.</p>
         </div>
 
         <div>
-            <h3>🤝 Trust</h3>
+            <h3> Trust</h3>
             <p>Ensuring transparency and fairness in every decision.</p>
         </div>
 
         <div>
-            <h3>🚀 Efficiency</h3>
+            <h3> Efficiency</h3>
             <p>Delivering fast and reliable loan approvals.</p>
         </div>
     </div>
@@ -120,6 +120,14 @@
 <script>
 function goDashboard() {
     window.location.href = "/static/index.html";
+}
+
+function logout() {
+    localStorage.removeItem("user_id");
+    localStorage.removeItem("user_name");
+    localStorage.removeItem("user_role");
+    localStorage.removeItem("session_token");
+    window.location.href = "/";
 }
 </script>
 

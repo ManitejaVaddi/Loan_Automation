@@ -1,4 +1,4 @@
-import random
+import hashlib
 import re
 
 
@@ -13,9 +13,11 @@ def fetch_credit_score(pan_number: str) -> dict:
             "existing_loans": 3
         }
 
-    #  Generate realistic credit profile
-    credit_score = random.randint(650, 800)
-    existing_loans = random.randint(0, 2)
+    #  Generate stable simulated profile for the same PAN
+    digest = hashlib.sha256(pan_number.encode("utf-8")).hexdigest()
+    profile_seed = int(digest[:8], 16)
+    credit_score = 650 + (profile_seed % 151)
+    existing_loans = (profile_seed // 151) % 3
 
     return {
         "pan": pan_number,

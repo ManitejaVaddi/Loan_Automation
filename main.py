@@ -5,9 +5,7 @@ from processing.cleaning import clean_applicant_data
 from processing.validation import validate_applicant
 
 from scoring.risk_engine import (
-    calculate_risk_score,
-    loan_decision,
-    calculate_interest_rate   # ✅ NEW
+    build_loan_assessment,
 )
 
 from storage.db import create_tables, insert_decision
@@ -20,33 +18,25 @@ logger = setup_logger()
 
 
 def process_loan_application(
-    user_id: int,   # ✅ NEW (VERY IMPORTANT)
+    user_id: int,
     aadhar_number: str,
     pan_number: str,
     experience_years: int,
     loan_amount: float,
     monthly_income: float
 ) -> dict:
-
     try:
         logger.info("Starting loan application processing")
 
-        # 🔹 DB setup
         create_tables()
-        create_loan_table()   # ✅ NEW
+        create_loan_table()
 
-        # 🔹 Step 1: Identity Verification
         identity = verify_identity(aadhar_number)
-        print("IDENTITY:", identity)
-
         if not identity.get("verified"):
             return {"status": "FAILED", "reason": "Identity verification failed"}
 
-        # 🔹 Step 2: Credit Fetch
         credit = fetch_credit_score(pan_number)
-        print("CREDIT:", credit)
 
-        # 🔹 Step 3: Build Applicant
         applicant = {
             "name": identity.get("name"),
             "credit_score": credit.get("credit_score"),
@@ -56,33 +46,24 @@ def process_loan_application(
             "loan_amount": loan_amount
         }
 
-        print("APPLICANT:", applicant)
-
-        # 🔹 Step 4: Cleaning & Validation
         cleaned = clean_applicant_data(applicant)
-        print("CLEANED:", cleaned)
-
         if not validate_applicant(cleaned):
             return {"status": "FAILED", "reason": "Invalid applicant data"}
 
-        # 🔹 Step 5: Risk Calculation
-        risk_score, reasons = calculate_risk_score(
+        assessment = build_loan_assessment(
             cleaned["credit_score"],
             cleaned["monthly_income"],
             cleaned["existing_loans"],
             cleaned["experience_years"],
             cleaned["loan_amount"]
         )
+        risk_score = assessment["risk_score"]
+        decision = assessment["decision"]
+        loan_ratio = assessment["loan_ratio"]
+        interest_rate = assessment["interest_rate"]
+        reasons = assessment["reasons"]
+        improvement_suggestions = assessment["improvement_suggestions"]
 
-        decision = loan_decision(risk_score)
-
-        # 🔹 NEW: Loan Ratio
-        loan_ratio = round(cleaned["loan_amount"] / cleaned["monthly_income"], 2)
-
-        # 🔹 NEW: Interest Rate
-        interest_rate = calculate_interest_rate(risk_score)
-
-        # 🔹 Step 6: Save & Report (old system)
         cleaned.update({
             "risk_score": risk_score,
             "decision": decision
@@ -91,7 +72,6 @@ def process_loan_application(
         insert_decision(cleaned)
         generate_csv_report(cleaned)
 
-        # 🔥 NEW: SAVE LOAN IN USER TABLE
         insert_loan(user_id, {
             "applicant_name": cleaned["name"],
             "credit_score": cleaned["credit_score"],
@@ -105,9 +85,8 @@ def process_loan_application(
             "interest_rate": interest_rate
         })
 
-        logger.info(f"Loan processed | {cleaned['name']} → {decision}")
+        logger.info(f"Loan processed | {cleaned['name']} -> {decision}")
 
-        # 🔹 Final Response
         return {
             "status": "SUCCESS",
             "applicant_name": cleaned["name"],
@@ -120,11 +99,11 @@ def process_loan_application(
             "decision": decision,
             "loan_ratio": loan_ratio,
             "interest_rate": interest_rate,
-            "reasons": reasons
+            "reasons": reasons,
+            "improvement_suggestions": improvement_suggestions
         }
 
     except Exception as exc:
-        print("ERROR:", str(exc))
         logger.exception("Processing error")
         return {
             "status": "ERROR",
@@ -132,10 +111,9 @@ def process_loan_application(
         }
 
 
-# 🔹 CLI test
 if __name__ == "__main__":
     result = process_loan_application(
-        user_id=1,   # ✅ REQUIRED NOW
+        user_id=1,
         aadhar_number="123456789012",
         pan_number="ABCDE1234F",
         experience_years=3,

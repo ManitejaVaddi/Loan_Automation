@@ -36,4 +36,27 @@ class LoanDecisionResponse(BaseModel):
     loan_amount: float
     risk_score: int
     decision: str
-    reasons: list[str]  
+    loan_ratio: float
+    interest_rate: float
+    reasons: list[str]
+    improvement_suggestions: list[str]
+
+
+class LoanSimulationRequest(BaseModel):
+    credit_score: int = Field(..., ge=300, le=900)
+    monthly_income: float = Field(..., gt=0)
+    existing_loans: int = Field(..., ge=0)
+    experience_years: int = Field(..., ge=0)
+    loan_amount: float = Field(..., gt=0)
+
+
+class LoanReviewDecisionRequest(BaseModel):
+    final_decision: str
+    reviewer_notes: str = Field(..., min_length=5, max_length=500)
+
+    @field_validator("final_decision")
+    @classmethod
+    def validate_final_decision(cls, v):
+        if v not in {"APPROVED", "REJECTED"}:
+            raise ValueError("Final decision must be APPROVED or REJECTED")
+        return v
