@@ -558,3 +558,11 @@ Traceback (most recent call last):
     ))
     ^^
 sqlite3.OperationalError: 15 values for 16 columns
+2026-04-20 00:41:29,240 | INFO | main | Starting loan application processing
+2026-04-20 00:41:29,240 | INFO | main | Starting loan application processing
+2026-04-20 00:41:29,252 | INFO | db | Database tables initialized successfully
+2026-04-20 00:41:29,252 | INFO | db | Database tables initialized successfully
+2026-04-20 00:41:29,569 | INFO | db | Loan decision stored | Applicant=User_9569 | Decision=REVIEW
+2026-04-20 00:41:29,569 | INFO | db | Loan decision stored | Applicant=User_9569 | Decision=REVIEW
+2026-04-20 00:41:29,587 | INFO | main | Loan processed | User_9569 -> REVIEW
+2026-04-20 00:41:29,587 | INFO | main | Loan processed | User_9569 -> REVIEW
