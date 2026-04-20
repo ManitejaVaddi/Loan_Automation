@@ -218,3 +218,7 @@ def review_analytics(x_session_token: str | None = Header(default=None)):
 @app.get("/", include_in_schema=False)
 def serve_login():
     return FileResponse(BASE_DIR / "static" / "login.html")
+
+@app.post("/contact")
+async def contact(data: dict):
+    return {"message": "Received successfully"}

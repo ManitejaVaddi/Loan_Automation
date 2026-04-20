@@ -566,3 +566,19 @@ sqlite3.OperationalError: 15 values for 16 columns
 2026-04-20 00:41:29,569 | INFO | db | Loan decision stored | Applicant=User_9569 | Decision=REVIEW
 2026-04-20 00:41:29,587 | INFO | main | Loan processed | User_9569 -> REVIEW
 2026-04-20 00:41:29,587 | INFO | main | Loan processed | User_9569 -> REVIEW
+2026-04-20 01:26:13,974 | INFO | main | Starting loan application processing
+2026-04-20 01:26:13,974 | INFO | main | Starting loan application processing
+2026-04-20 01:26:13,980 | INFO | db | Database tables initialized successfully
+2026-04-20 01:26:13,980 | INFO | db | Database tables initialized successfully
+2026-04-20 01:26:14,302 | INFO | db | Loan decision stored | Applicant=User_9586 | Decision=REJECTED
+2026-04-20 01:26:14,302 | INFO | db | Loan decision stored | Applicant=User_9586 | Decision=REJECTED
+2026-04-20 01:26:14,317 | INFO | main | Loan processed | User_9586 -> REJECTED
+2026-04-20 01:26:14,317 | INFO | main | Loan processed | User_9586 -> REJECTED
+2026-04-20 19:45:55,200 | INFO | main | Starting loan application processing
+2026-04-20 19:45:55,200 | INFO | main | Starting loan application processing
+2026-04-20 19:45:55,215 | INFO | db | Database tables initialized successfully
+2026-04-20 19:45:55,215 | INFO | db | Database tables initialized successfully
+2026-04-20 19:45:55,535 | INFO | db | Loan decision stored | Applicant=User_9589 | Decision=APPROVED
+2026-04-20 19:45:55,535 | INFO | db | Loan decision stored | Applicant=User_9589 | Decision=APPROVED
+2026-04-20 19:45:55,552 | INFO | main | Loan processed | User_9589 -> APPROVED
+2026-04-20 19:45:55,552 | INFO | main | Loan processed | User_9589 -> APPROVED

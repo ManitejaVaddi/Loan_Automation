@@ -93,12 +93,18 @@ document.addEventListener("DOMContentLoaded", async () => {
             }
 
             renderDecision(data);
-            await loadHistory();
-            if (canReview) {
-                await loadReviewQueue();
-                await loadReviewAnalytics();
-            }
-            form.reset();
+
+
+await loadHistory();
+await prefillSimulatorFromHistory();   
+runSimulation();                       
+
+if (canReview) {
+    await loadReviewQueue();
+    await loadReviewAnalytics();
+}
+
+form.reset();
         } catch (error) {
             loadingDiv.classList.add("hidden");
             if (isSessionError(error)) {
@@ -210,23 +216,21 @@ async function prefillSimulatorFromHistory() {
 
         if (!data.applications || data.applications.length === 0) return;
 
-        const last = data.applications[data.applications.length - 1];
+        // ✅ ALWAYS GET LATEST RECORD
+        const last = data.applications.sort(
+            (a, b) => new Date(b.created_at) - new Date(a.created_at)
+        )[0];
 
-        
+        // ✅ SET VALUES
         document.getElementById("simCreditScore").value = last.credit_score;
         document.getElementById("simIncome").value = last.monthly_income;
         document.getElementById("simLoanAmount").value = last.loan_amount;
         document.getElementById("simExperience").value = last.experience_years;
         document.getElementById("simExistingLoans").value = last.existing_loans;
 
-       
-        document.getElementById("simCreditScoreValue").innerText = last.credit_score;
-        document.getElementById("simIncomeValue").innerText = formatCurrencyNumber(last.monthly_income);
-        document.getElementById("simLoanAmountValue").innerText = formatCurrencyNumber(last.loan_amount);
-        document.getElementById("simExperienceValue").innerText = last.experience_years;
-        document.getElementById("simExistingLoansValue").innerText = last.existing_loans;
-
-        runSimulation();
+        // ✅ FORCE UI + SIMULATION UPDATE
+        ["simCreditScore","simIncome","simLoanAmount","simExperience","simExistingLoans"]
+        .forEach(id => document.getElementById(id).dispatchEvent(new Event("input")));
 
     } catch (error) {
         console.log("Prefill failed", error);
@@ -535,3 +539,26 @@ async function logout() {
     localStorage.removeItem("session_token");
     window.location.href = "/";
 }
+
+document.getElementById("contactForm")?.addEventListener("submit", async function(e) {
+    e.preventDefault();
+
+    const payload = {
+        name: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+        message: document.getElementById("message").value
+    };
+
+    const res = await fetch("/contact", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(payload)
+    });
+
+    const data = await res.json();
+
+    alert(data.message);
+    this.reset();
+});

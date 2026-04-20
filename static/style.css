@@ -898,3 +898,114 @@ body {
         align-items: flex-start;
     }
 }
+
+/* ================= CONTACT PAGE ================= */
+
+/* HERO (reuse your style but slightly tuned) */
+.contact-hero {
+    text-align: center;
+    padding: 80px 20px;
+    background: linear-gradient(135deg, #6a5cff, #b224ef);
+    color: white;
+}
+
+.contact-hero h1 {
+    font-size: 42px;
+    margin-bottom: 10px;
+}
+
+.contact-hero p {
+    font-size: 16px;
+    opacity: 0.9;
+}
+
+/* MAIN CONTAINER */
+.contact-wrapper {
+    padding: 60px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+
+/* FORM CARD */
+.contact-form-card {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 18px;
+    padding: 28px;
+    box-shadow: 0 18px 45px rgba(71, 85, 105, 0.1);
+    border: 1px solid rgba(124, 58, 237, 0.08);
+}
+
+.contact-form-card h2 {
+    margin-bottom: 20px;
+}
+
+/* INPUTS */
+.contact-form-card input,
+.contact-form-card textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 14px;
+    border-radius: 10px;
+    border: 1px solid #d4daf3;
+    font-size: 14px;
+    font-family: inherit;
+}
+
+/* BUTTON */
+.contact-form-card button {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    background: linear-gradient(135deg, #6a5cff, #b224ef);
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.contact-form-card button:hover {
+    opacity: 0.9;
+}
+
+/* INFO CARD */
+.contact-info-card {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 18px;
+    padding: 28px;
+    box-shadow: 0 18px 45px rgba(71, 85, 105, 0.1);
+    border: 1px solid rgba(124, 58, 237, 0.08);
+}
+
+.contact-info-card h2 {
+    margin-bottom: 20px;
+}
+
+.contact-info-card p {
+    margin-bottom: 12px;
+    color: #4b5563;
+    font-size: 14px;
+}
+
+/* EXTRA CARD (WHY CONTACT) */
+.contact-extra {
+    margin-top: 20px;
+    padding: 18px;
+    border-radius: 14px;
+    background: linear-gradient(180deg, #f9faff, #eef2ff);
+    border: 1px solid #dde4ff;
+}
+
+.contact-extra ul {
+    padding-left: 18px;
+    margin-top: 10px;
+    color: #4b5563;
+}
+
+/* RESPONSIVE */
+@media(max-width: 900px) {
+    .contact-wrapper {
+        grid-template-columns: 1fr;
+        padding: 40px 20px;
+    }
+}

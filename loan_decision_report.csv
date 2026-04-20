@@ -1,2 +1,2 @@
 name,credit_score,monthly_income,existing_loans,experience_years,loan_amount,risk_score,decision
-User_9586,737,500000.0,2,2,700000.0,30,REJECTED
+User_8996,788,700000.0,0,3,20000.0,90,APPROVED
