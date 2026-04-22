@@ -590,3 +590,11 @@ sqlite3.OperationalError: 15 values for 16 columns
 2026-04-20 20:05:19,002 | INFO | db | Loan decision stored | Applicant=User_8996 | Decision=APPROVED
 2026-04-20 20:05:19,020 | INFO | main | Loan processed | User_8996 -> APPROVED
 2026-04-20 20:05:19,020 | INFO | main | Loan processed | User_8996 -> APPROVED
+2026-04-21 23:22:08,851 | INFO | main | Starting loan application processing
+2026-04-21 23:22:08,851 | INFO | main | Starting loan application processing
+2026-04-21 23:22:08,861 | INFO | db | Database tables initialized successfully
+2026-04-21 23:22:08,861 | INFO | db | Database tables initialized successfully
+2026-04-21 23:22:09,184 | INFO | db | Loan decision stored | Applicant=User_7999 | Decision=REJECTED
+2026-04-21 23:22:09,184 | INFO | db | Loan decision stored | Applicant=User_7999 | Decision=REJECTED
+2026-04-21 23:22:09,202 | INFO | main | Loan processed | User_7999 -> REJECTED
+2026-04-21 23:22:09,202 | INFO | main | Loan processed | User_7999 -> REJECTED

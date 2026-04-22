@@ -1,6 +1,7 @@
 from pathlib import Path
+import requests
 
-from fastapi import FastAPI, Header, HTTPException
+from fastapi import FastAPI, Header, HTTPException,Body
 from fastapi.openapi.docs import get_swagger_ui_html
 from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
@@ -222,3 +223,40 @@ def serve_login():
 @app.post("/contact")
 async def contact(data: dict):
     return {"message": "Received successfully"}
+
+@app.post("/ai/chat")
+async def ai_chat(
+    message: dict = Body(...),
+    x_session_token: str | None = Header(default=None)
+):
+    # Optional: require login
+    user = get_authenticated_user(x_session_token)
+
+    user_message = message.get("message")
+
+    prompt = f"""
+    You are a Loan Advisor AI.
+    Help users understand loan eligibility, risk score, and improvements.
+
+    User question: {user_message}
+    """
+
+    response = requests.post(
+        "https://api.openai.com/v1/chat/completions",
+        headers={
+            "Authorization": "Bearer YOUR_API_KEY",
+            "Content-Type": "application/json"
+        },
+        json={
+            "model": "gpt-4o-mini",
+            "messages": [
+                {"role": "user", "content": prompt}
+            ]
+        }
+    )
+
+    data = response.json()
+
+    return {
+        "reply": data["choices"][0]["message"]["content"]
+    }
